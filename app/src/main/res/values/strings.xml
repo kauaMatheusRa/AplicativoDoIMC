@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Appimc</string>
+    <string name="txt_button_calcula" />
+    <string name="txt_edit_digite_sua_altura" />
+    <string name="txt_edit_digite_o_peso" />
+    <string name="txt_titulo" />
+</resources>
