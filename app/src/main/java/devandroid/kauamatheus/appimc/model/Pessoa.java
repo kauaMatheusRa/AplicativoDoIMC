@@ -3,20 +3,33 @@ package devandroid.kauamatheus.appimc.model;
 import androidx.annotation.NonNull;
 
 public class Pessoa {
-    private final double peso;
-    private final double altura;
+    private float peso;
+    private float altura;
 
-    public Pessoa(double peso, double altura) {
+    public Pessoa(){
+
+    }
+
+    public Pessoa(float peso, float altura) {
         this.peso = peso;
         this.altura = altura;
     }
 
-    public double getPeso() {
+
+    public float getPeso() {
         return peso;
     }
 
-    public double getAltura() {
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
+    public float getAltura() {
         return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
     }
 
     @NonNull
