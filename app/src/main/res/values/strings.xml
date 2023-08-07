@@ -4,4 +4,8 @@
     <string name="txt_edit_digite_sua_altura" />
     <string name="txt_edit_digite_o_peso" />
     <string name="txt_titulo" />
+    <string name="txt_titulo_calculadora_de_imc">Calculadora de Imc</string>
+    <string name="txt_peso">Peso</string>
+    <string name="txt_altura">Altura</string>
+    <string name="txt_button_calcular">Calcular</string>
 </resources>

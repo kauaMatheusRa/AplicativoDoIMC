@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView resultadoImc;
 
+    double calculoImc;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new PessoaController(MainActivity.this);
         controller.toString();
-
-        novaPessoa = new Pessoa();
-        controller.buscar(novaPessoa);
 
 
         inputAltura = findViewById(R.id.editTextAltura);
@@ -50,10 +50,21 @@ public class MainActivity extends AppCompatActivity {
         btnCalcularImc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Pessoa pessoas = new Pessoa();
+                pessoas.setPeso(Float.parseFloat(inputPeso.getText().toString()));
+                pessoas.setAltura(Float.parseFloat(inputAltura.getText().toString()));
                 calcularImc();
-                novaPessoa.setPeso(Float.parseFloat(inputPeso.getText().toString()));
-                novaPessoa.setAltura(Float.parseFloat(inputAltura.getText().toString()));
-                controller.salvar(novaPessoa);
+                pessoas.setResultado(String.valueOf(calculoImc));
+
+
+                controller.salvar(pessoas);
+
+                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
+
+                inputPeso.setText("");
+                inputAltura.setText("");
+
             }
         });
 
@@ -63,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
         float alturaValue;
         float pesoValue;
-        double calculoImc;
         String calculoImcFormated;
 
         try{
